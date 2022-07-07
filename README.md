@@ -1,2 +1,1 @@
-# pressense-website
-Django website for Sterrenstof festival.
+# Sterrenstof readme
