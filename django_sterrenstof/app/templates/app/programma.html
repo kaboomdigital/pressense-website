@@ -1,0 +1,59 @@
+{% extends 'app/base.html' %}
+
+{% block title %}
+    Programma
+{% endblock %}
+
+{% block meta %}
+<meta property="og:url" content="{{ url }}"/>
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Sterrenstof Festival 10 september 2017 - Programma" />
+<meta property="og:description" content="Let’s dance, let's dive. Let's think, let's thrive!" />
+<meta property="og:image" content="http://{{ domain }}/static/images/sterrenstof_logo_og.jpg" />
+<meta property="fb:app_id" content="XXXXXXXXXXXXX"/>
+{% endblock %}
+
+{% block content %}
+<section class="container container--narrow">
+    <div class="section section--content">
+
+        <ul class="programma__filter">
+            <li class="programma__filter__item"><button id="all" class="programma__filter__button programma__filter__button--all">Alles</button></li>
+            <li class="programma__filter__item"><button id="programma__label--muziek" class="programma__filter__button programma__filter__button--muziek">Muziek</button></li>
+            <li class="programma__filter__item"><button id="programma__label--sprekers" class="programma__filter__button programma__filter__button--sprekers">Sprekers</button></li>
+            <li class="programma__filter__item"><button id="programma__label--ook-leuk" class="programma__filter__button programma__filter__button--ook-leuk">Overig</button></li>
+            <li class="programma__filter__item"><button id="programma__label--kids" class="programma__filter__button programma__filter__button--kids">Kids</button></li>
+            <li class="programma__filter__item"><button id="programma__label--workshops" class="programma__filter__button programma__filter__button--workshops">Workshops</button></li>
+            <li class="programma__filter__item"><button id="programma__label--food" class="programma__filter__button programma__filter__button--food">Food</button></li>
+            <li class="programma__filter__item"><button id="programma__label--healing" class="programma__filter__button programma__filter__button--healing">Healing</button></li>
+            <li class="programma__filter__item"><button id="programma__label--km-area" class="programma__filter__button programma__filter__button--km-area">KM Area</button></li>
+        </ul>
+
+        <div class="programma__wrapper clearfix">
+
+            {% for item in programma %}
+            <div class="programma__item jsq__{{item.link_kleur}}">
+                <a href="{% url 'programma_details' programma_url=item.url %}" class="programma__inner" style="background-image: url('{{ item.thumbnail.url }}')">
+                    <h2 class="programma__label {{item.link_kleur}}" style="font-size: {{item.font_size}}em">
+                        {{ item.naam }}
+                    </h2>
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+
+    </div>
+</section>
+
+<script type="text/javascript">
+    $('.programma__filter__button').click(function () {
+        if (this.id == 'all') {
+            $('.programma__item').fadeIn(450);
+        } else {
+            var $el = $('.jsq__' + this.id).fadeIn(450);
+            $('.programma__item').not($el).hide();
+        }
+    })
+</script>
+
+{% endblock %}

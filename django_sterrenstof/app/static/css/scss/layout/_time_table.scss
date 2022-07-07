@@ -1,0 +1,40 @@
+.time-table {
+
+    &__wrapper {
+        width: calc(100% + 20px);
+        margin-left: -10px;
+    }
+
+    &__item {
+        box-sizing: border-box;
+        padding: 10px;
+    }
+
+    &__inner {
+        background-color: $white;
+        height: 100%;
+        padding: 20px;
+        border-radius: 20px;
+        box-shadow: inset 4px 4px 57px #3cbda5;
+    }
+
+    &__image {
+      max-width: 100%;
+      width: 100%;
+      height: auto;
+    }
+
+    &__link {
+      @extend .font-league-gothic;
+    }
+}
+
+@media #{$small-tablet} {
+
+    .time-table {
+
+        &__inner {
+            padding: 50px;
+        }
+    }
+}

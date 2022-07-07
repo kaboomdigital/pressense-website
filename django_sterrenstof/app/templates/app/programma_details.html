@@ -1,0 +1,66 @@
+{% extends 'app/base.html' %}
+{% load staticfiles %}
+
+{% block title %}
+    {% for item in programmas %}{{ item.naam }}{% endfor %}
+{% endblock %}
+
+{% block meta %}
+{% for item in programma %}
+<meta property="og:url" content="{{ url }}"/>
+<meta property="og:type" content="website"/>
+<meta property="og:title" content="Sterrenstof Festival 10 september 2017 - Programma - {% for item in programma %}{{ item.naam }}{% endfor %}"/>
+<meta property="og:description" content="{{ item.omschrijving|striptags }}"/>
+<meta property="og:image" content="http://{{ domain }}{{ item.afbeelding.url }}"/>
+<meta property="fb:app_id" content="XXXXXXXXXXXXX"/>
+{% endfor %}
+{% endblock %}
+
+{% block content %}
+{% for item in programma %}
+<div class="container container--narrow">
+    <div class="section section--content">
+        <div class="programma-details__wrapper">
+            <div class="programma-details__item">
+                <div id="nav" class="programma-details__inner">
+
+                    <!--Navigatie-->
+                    <div class="programma-nav">
+                        {% if prev.url != null %}
+                        <a class="programma-nav__link programma-nav__link--previous" href="{{ prev.url }}#nav">
+                            <img class="programma-nav__link-icon programma-nav__link-icon--previous"
+                                 src="{% static 'icons/nav/back.svg' %}"/>
+                        </a>
+                        {% endif %}
+
+                        <h1 class="heading heading--pages">{{ item.naam }}</h1>
+
+                        {% if next.url != null %}
+                        <a class="programma-nav__link programma-nav__link--next" href="{{ next.url }}#nav">
+                            <img class="programma-nav__link-icon programma-nav__link-icon--next"
+                                 src="{% static 'icons/nav/next.svg' %}"/>
+                        </a>
+                        {% endif %}
+                    </div>
+
+                    <!--Content-->
+                    <div class="programma-item__wrapper clearfix">
+                        <div class="programma-item__block">
+                            <img src="{{ item.afbeelding.url }}" class="programma-item__image">
+                        </div>
+                        <div class="programma-item__block">
+                            <div>{% autoescape off %} {{ item.omschrijving }} {% endautoescape %}</div>
+                            <p class="paragraph">Tijd: {{ item.tijd_slot }}</p>
+                            <p class="paragraph">Locatie: {{ item.locatie }}</p>
+                            <!--<p class="paragraph">Website: <a href="{{ item.websiteurl }}" target="_blank" rel="noopener noreferrer">{{ item.websitelink }}</a></p>-->
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endfor %}
+{% endblock %}

@@ -1,0 +1,1 @@
+web: gunicorn --pythonpath django_sterrenstof django_sterrenstof.wsgi

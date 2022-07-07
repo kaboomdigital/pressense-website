@@ -1,0 +1,190 @@
+.programma {
+
+    &__filter {
+        z-index: 1;
+        overflow: hidden;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        padding: 10px 0;
+        background-color: #00aa9b;
+        list-style-type: none;
+        text-align: center;
+        border-top: 1px solid white;
+
+        &__item {
+            display: inline;
+        }
+
+        &__button {
+            @extend .font-league-gothic;
+            background-color: $white;
+            color: $white;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 0.8em;
+            transition: background-color 0.3s;
+            border: 1px solid #d2d2d2;
+            border-radius: 10px;
+            display: inline-block;
+            padding: 5px;
+            margin: 4px 2px;
+
+            &:focus {
+                outline: 0;
+            }
+
+            &--all {
+                background-color: $white;
+                color: $black;
+            }
+
+            &--muziek {
+                background-color: #FFB114;
+            }
+
+            &--sprekers {
+                background-color: #FF8200;
+            }
+
+            &--ook-leuk {
+                background-color: #FF540D;
+            }
+
+            &--kids {
+                background-color: #FF7375;
+            }
+
+            &--workshops {
+                background-color: #E80817;
+            }
+
+            &--food {
+                background-color: #910817;
+            }
+
+            &--healing {
+                background-color: #835f91;
+            }
+
+            &--km-area {
+                background-color: #452891;
+            }
+        }
+    }
+
+    &__wrapper {
+        width: calc(100% + 20px);
+        margin-left: -10px;
+    }
+
+    &__item {
+        box-sizing: border-box;
+        height: 200px;
+        padding: 10px;
+        margin: 0 0 20px 0;
+    }
+
+    &__inner {
+        position: relative;
+        display: block;
+        height: 100%;
+        background-color: $white;
+        text-decoration: none;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        border: 6px solid white;
+        border-radius: 10px;
+        box-sizing: border-box;
+
+        &:hover .programma__label {
+            background-color: $blue;
+        }
+    }
+
+    &__label {
+        @extend .font-league-gothic;
+        position: absolute;
+        width: 110px;
+        bottom: -15px;
+        right: -6px;
+        padding: 6px 20px;
+        color: $white;
+        text-transform: uppercase;
+        text-align: center;
+        font-size: 1.2em;
+        transition: background-color 0.3s;
+
+        &:hover {
+            background-color: $blue;
+        }
+
+        &--muziek {
+            background-color: #FFB114;
+        }
+
+        &--sprekers {
+            background-color: #FF8200;
+        }
+
+        &--ook-leuk {
+            background-color: #FF540D;
+        }
+
+        &--kids {
+            background-color: #FF7375;
+        }
+
+        &--workshops {
+            background-color: #E80817;
+        }
+
+        &--food {
+            background-color: #910817;
+        }
+
+        &--healing {
+            background-color: #835f91;
+        }
+
+        &--km-area {
+            background-color: #452891;
+        }
+    }
+}
+
+@media #{$small-tablet} {
+    .programma {
+
+        &__filter {
+            position: relative;
+            background-color: transparent;
+            padding: 0;
+            margin-bottom: 20px;
+            border: 0;
+
+            &__button {
+                width: 85px;
+                padding: 5px 5px;
+                margin: 5px;
+            }
+        }
+
+        &__item {
+            width: 50%;
+            float: left;
+        }
+    }
+}
+
+@media #{$tablet} {
+
+    .programma {
+
+        &__item {
+            width: 25%;
+        }
+    }
+}

@@ -1,0 +1,43 @@
+@import "normalize.css";
+@import "fonts.css";
+
+// Settings
+@import "scss/settings/media-queries";
+@import "scss/settings/globals";
+@import "scss/settings/typography";
+@import "scss/settings/animations";
+
+// Mixins
+//@import "mixins/vertical-center-dib";
+//@import "mixins/clearfix";
+
+// Defaults
+//@import "defaults/button";
+
+// Layout
+@import "scss/layout/base";
+@import "scss/layout/nav";
+@import "scss/layout/index";
+@import "scss/layout/programma";
+@import "scss/layout/programma_details";
+@import "scss/layout/festival_info";
+@import "scss/layout/time_table";
+@import "scss/layout/footer";
+
+// Sections
+//@import "sections/section";
+//@import "sections/header";
+//@import "sections/about";
+//@import "sections/team_desktop";
+//@import "sections/team_mobile";
+//@import "sections/clients";
+//@import "sections/contact";
+//@import "sections/footer";
+
+// Components
+//@import "scss/components/base";
+//@import "scss/components/nav_menu";
+//@import "components/client-logo";
+//@import "components/case-intro";
+//@import "components/case-video";
+//@import "components/team_member";

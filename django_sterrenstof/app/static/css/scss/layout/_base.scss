@@ -1,0 +1,63 @@
+html, body {
+    height: 100%;
+    background-color: $green;
+    background-image: url("/static/images/ster_background.jpg");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+a {
+    color: black;
+}
+
+ul, h1, h2, h3, h4, h5, h6, p {
+    padding: 0;
+    margin: 0;
+}
+
+.container {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+    &--narrow {
+        padding: 0 30px;
+    }
+}
+
+.section {
+    height: auto;
+    margin: 0 auto;
+    padding: 0;
+
+    &--nav {
+        max-width: $page-width;
+        box-sizing: border-box;
+    }
+
+    &--content {
+        max-width: $page-width;
+    }
+
+    &--content-wide {
+        width: 100%;
+    }
+}
+
+.header-logo {
+    max-width: 600px;
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+}
+
+@media #{$short-screen} {
+
+    .header-logo {
+        height: 60vh;
+        width: auto;
+    }
+}

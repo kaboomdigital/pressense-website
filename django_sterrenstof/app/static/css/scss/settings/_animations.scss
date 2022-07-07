@@ -1,0 +1,12 @@
+@keyframes opacity {
+    from {  opacity: 0;  }
+    to {  opacity: 1;  }
+}
+
+@mixin anim_opacity($time) {
+    opacity: 0;
+    animation-name: opacity;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+    animation-duration: $time;
+}

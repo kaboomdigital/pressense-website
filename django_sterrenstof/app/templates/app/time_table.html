@@ -1,0 +1,36 @@
+{% extends 'app/base.html' %}
+{% load staticfiles %}
+
+{% block title %}
+    Festival Time Table
+{% endblock %}
+
+{% block meta %}
+<meta property="og:url" content="{{ url }}"/>
+<meta property="og:type" content="website"/>
+<meta property="og:title" content="Sterrenstof Festival 10 september 2017 - Time Table"/>
+<meta property="og:description" content="Let’s dance, let's dive. Let's think, let's thrive!"/>
+<meta property="og:image" content="http://{{ domain }}/static/images/sterrenstof_logo_pllek.png"/>
+<meta property="fb:app_id" content="XXXXXXXXXXXXXXXXX"/>
+{% endblock %}
+
+{% block content %}
+<div class="container container--narrow">
+    <div class="section section--content">
+        <div class="time-table__wrapper">
+            <div class="time-table__item">
+                <div class="time-table__inner">
+                    <img class="time-table__image" src="https://s3.eu-central-1.amazonaws.com/sterrenstof/time-table/tt_lowres.jpg" alt="Festival Time Table"/>
+                    <a class="time-table__link" href="https://s3.eu-central-1.amazonaws.com/sterrenstof/time-table/tt_hires.jpg" alt="Festival Time Table Hires">Klik hier voor groot formaat</a>
+                    <br/>
+                    <br/>
+                    <img class="time-table__image" src="https://s3.eu-central-1.amazonaws.com/sterrenstof/time-table/map_lowres.jpg" alt="Festival Map"/>
+                    <a class="time-table__link" href="https://s3.eu-central-1.amazonaws.com/sterrenstof/time-table/map_hires.jpg" alt="Festival Map Hires">Klik hier voor groot formaat</a>
+                    <br/>
+                    <br/>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

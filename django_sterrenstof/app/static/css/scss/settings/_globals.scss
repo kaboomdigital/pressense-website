@@ -1,0 +1,26 @@
+/*** Colors */
+$black: #000;
+$white: #fff;
+$green: #00aa9b;
+$orange: #ffb114;
+$blue: #218ace;
+
+/*** Widths */
+$page-width: 990px;
+
+/*** Clearfix mixin */
+@mixin clearfix {
+    &:before,
+    &:after {
+        content: ' ';
+        display: table;
+    }
+
+    &:after {
+        clear: both;
+    }
+}
+
+.clearfix {
+    @include clearfix;
+}

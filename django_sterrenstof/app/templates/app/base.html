@@ -1,0 +1,59 @@
+{% load staticfiles %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+
+    <title>Sterrenstof Festival - {% block title %}{% endblock %}</title>
+    {% block meta %}{% endblock %}
+    <meta name="description" content="Sterrenstof Festival">
+    <meta name="author" content="Kaboom">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'css/vue-resize.css' %}"/>
+    <link rel="icon" href="{% static 'favicon.ico' %}">
+
+    <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+    <![endif]-->
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="{% static 'js/vue.min.js' %}"></script>
+    <script src="{% static 'js/vue-carousel.min.js' %}"></script>
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-XXXXXXXXXX-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+</head>
+<body>
+<header class="container container--narrow">
+    <a href="/">
+        <img class="header-logo" src="{% static 'images/sterrenstof_logo_pllek.png' %}" alt="Sterrenstof Logo"/>
+    </a>
+    <nav class="section section--nav">
+        <ul class="nav-menu">
+            <li class="nav-menu__item"><a class="button" href="/programma">Programma</a></li>
+            <li class="nav-menu__item"><a class="button" href="/festival-info">Festival Info</a></li>
+            <li class="nav-menu__item"><a class="button" href="/time-table">Time Table</a></li>
+            <li class="nav-menu__item"><a class="button" href="https://www.chipta.com/nl/SterrenstofFestival/7335/selectticket" target="_blank" rel="noopener noreferrer">Tickets</a></li>
+        </ul>
+    </nav>
+</header>
+{% block content %}
+{% endblock %}
+
+{% include "app/footer.html" %}
+</body>
+</html>

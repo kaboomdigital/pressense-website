@@ -1,0 +1,31 @@
+{% extends 'app/base.html' %}
+{% load staticfiles %}
+
+{% block title %}
+    Festival Info
+{% endblock %}
+
+{% block meta %}
+<meta property="og:url" content="{{ url }}"/>
+<meta property="og:type" content="website"/>
+<meta property="og:title" content="Sterrenstof Festival 10 september 2017 - Festival Info"/>
+<meta property="og:description" content="Let’s dance, let's dive. Let's think, let's thrive!"/>
+<meta property="og:image" content="http://{{ domain }}/static/images/sterrenstof_logo_pllek.png"/>
+<meta property="fb:app_id" content="XXXXXXXXXXXXX"/>
+{% endblock %}
+
+{% block content %}
+<div class="container container--narrow">
+    <div class="section section--content">
+        <div class="festival-info__wrapper">
+            <div class="festival-info__item">
+                <div class="festival-info__inner">
+                    {% for item in festival_info %}
+                        {% autoescape off %} {{ item.content }} {% endautoescape %}
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

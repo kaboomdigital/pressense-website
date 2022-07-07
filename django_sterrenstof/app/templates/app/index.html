@@ -1,0 +1,28 @@
+{% extends 'app/base.html' %}
+
+{% block meta %}
+<meta property="og:url" content="{{ url }}"/>
+<meta property="og:type" content="website"/>
+<meta property="og:title" content="Sterrenstof Festival 10 september 2017"/>
+<meta property="og:description" content="Let’s dance, let's dive. Let's think, let's thrive!" />
+<meta property="og:image" content="http://{{ domain }}/static/images/sterrenstof_logo_og.jpg"/>
+<meta property="fb:app_id" content="XXXXXXXXXXXXX"/>
+{% endblock %}
+
+{% block content %}
+<section class="container container--narrow">
+    <div class="section section--content">
+        <div class="index">
+            <div class="video-container">
+                <iframe src="//www.youtube.com/embed/KxlyLKU5O8g?autoplay=1&mute=1"
+                        frameborder="0" allowfullscreen class="video-container__video"></iframe>
+            </div>
+
+            <h1 class="heading heading--index">
+                Let’s dance, let’s dive. <br/>
+                Let’s think, let’s thrive!
+            </h1>
+        </div>
+    </div>
+</section>
+{% endblock %}

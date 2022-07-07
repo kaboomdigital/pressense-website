@@ -1,0 +1,21 @@
+.index {
+    padding: 10px 0;
+}
+
+.video-container {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%;
+
+    &__video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 101%;
+        border: 6px solid white;
+        border-radius: 10px;
+        box-sizing: border-box;
+    }
+}
